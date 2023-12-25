@@ -1,0 +1,9 @@
+Scenario 1:
+we can define default method in single interface and override default method in
+implementation class in also.
+
+Scenario 2:
+clash when two interfaces declare the same method signature default methods allows
+Java to get some basic multiple inheritance capabilities.
+
+Scenario 3:

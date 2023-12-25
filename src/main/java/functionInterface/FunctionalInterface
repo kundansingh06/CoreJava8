@@ -1,0 +1,66 @@
+How many types of Interfaces are there in Java ?
+Typically we have three types of Interfaces till now.
+1) Normal Interface:    has either one or multiple number of abstract methods
+2) Marker Interface:    has no any abstract method
+3) Functional Interface:has only one abstract method But can have any number of static, default methods and even public methods of java.lang.Object class
+
+1.An Interface that contains exactly one abstract method is known as functional interface.
+  A functional interface can have any number of default, static methods but can contain only one abstract method.
+  A functional interface can contain any number of Object class methods.
+  A functional interface can extends another interface only when it does not have any abstract method.
+  A functional interface can extends to a non-functional interface.
+
+ ---------------- Method signature of Functional Interface ----------------
+() -> {}                     // No parameters; void result
+() -> 42                     // No parameters, expression body
+() -> null                   // No parameters, expression body
+() -> { return 42; }         // No parameters, block body with return
+() -> { System.gc(); }       // No parameters, void block body
+
+(int x) -> x+1               // Single declared-type argument
+(int x) -> { return x+1; }   // same as above
+
+(x) -> x+1                   // Single inferred-type argument, same as below
+x -> x+1                     // Parenthesis optional for single inferred-type case
+
+(String s) -> s.length()     // Single declared-type argument
+s -> s.length()              // Single inferred-type argument
+
+
+(int x, int y) -> x+y        // Multiple declared-type parameters
+(x,y) -> x+y                 // Multiple inferred-type parameters
+
+(x, final y) -> x+y          // Illegal: can't modify inferred-type parameters
+(x, int y) -> x+y            // Illegal: can't mix inferred and declared types
+
+ ---------------- import java.util.function._ ---------------- 
+* Functional Interfaces in JDK
+
+Runnable:       contains only the run() method.
+Comparable:     contains only the compareTo() method.
+ActionListener: contains only the actionPerformed() method.
+Callable:       contains only the call() method.
+
+1.Predicate:A Predicate takes a single parameter and returns a true or false result by calling the test method.
+Predicate<Integer> isEven = i -> i % 2 == 0;
+System.out.println(isEven.test(3));
+
+
+2.Consumer: takes a single parameter by calling the accept method, and does not return a result
+Consumer c = obj -> System.out.println(obj);
+c.accept("Hello World");
+
+
+3.Supplier:       a supplier that returns a value.
+
+
+4.Function<T, R>: takes an argument of type T and returns a result of type R.
+A Function takes a single parameter and returns a result by calling the apply method.
+Function<Integer, Integer> double = i -> i * 2;
+System.out.println(double.apply(5));
+
+
+
+BiPredicate:    a predicate with two arguments.
+BiConsumer:     a consumer with two arguments.
+BiFunction<T, U, R>: takes two arguments of types T and U and returns a result of type R.

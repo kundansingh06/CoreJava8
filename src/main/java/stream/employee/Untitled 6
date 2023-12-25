@@ -1,0 +1,47 @@
+allMatch()
+anyMatch
+collect
+count()
+distinct()
+empty()
+filter
+findAny()
+findFirst()
+flatMap
+map(
+mapToInt(
+forEach
+forEachOrdered(
+limit(long maxSize)
+
+max()
+reduce(
+skip(long n)
+sorted()
+min()
+sorted(Comparator<? super T> comparator)
+==================================
+Collectors.reducing
+Collectors.averagingDouble
+Collectors.reducing
+Collectors.groupingBy
+Collectors.summarizingInt
+Collectors.
+Collectors.
+Collectors.
+Collectors.
+Collectors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
